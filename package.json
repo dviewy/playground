@@ -26,7 +26,7 @@
     "watch": [
       "server"
     ],
-    "exec": "webpack --config ./server/webpack.config.js && node ./build/server/index.js",
+    "exec": "webpack --config ./server/webpack.config.js && node -r dotenv/config ./build/server/index.js",
     "ext": "ts, tsx"
   },
   "dependencies": {
@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
+    "dotenv": "^10.0.0",
     "nodemon": "^2.0.12",
     "prettier": "^2.3.2",
     "ts-loader": "^9.2.5",
