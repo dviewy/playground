@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,31 @@
   "bugs": {
     "url": "https://github.com/dviewy/playground/issues"
   },
-  "homepage": "https://github.com/dviewy/playground#readme"
+  "homepage": "https://github.com/dviewy/playground#readme",
+  "nodemonConfig": {
+    "ignore": [
+      ".git",
+      "dist",
+      "node_modules",
+      "src"
+    ],
+    "watch": [
+      "server"
+    ],
+    "exec": "webpack --config ./server/webpack.config.js && node ./build/server/index.js",
+    "ext": "ts, tsx"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2",
+    "ts-loader": "^9.2.5",
+    "typescript": "^4.3.5",
+    "webpack": "^5.50.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-node-externals": "^3.0.0"
+  }
 }
