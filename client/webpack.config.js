@@ -6,14 +6,17 @@ const { NODE_ENV } = process.env;
 
 module.exports = {
   mode: NODE_ENV === "development" ? "development" : "production",
-  entry: "./client/index.js",
+  entry: "./client/index.ts",
   output: {
     path: path.resolve("build", "client"),
     filename: "static/js/index.js",
     publicPath: "/",
   },
   resolve: {
-    extensions: [".js", ".ts", ".tsx"],
+    extensions: [".ts", ".tsx", ".js"],
+  },
+  module: {
+    rules: [{ test: /\.tsx?$/, loader: "ts-loader" }],
   },
   plugins: [
     new HTMLWebpackPlugin({
