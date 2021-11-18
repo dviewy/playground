@@ -7,7 +7,7 @@ const { NODE_ENV } = process.env;
 
 module.exports = {
   mode: NODE_ENV === "development" ? "development" : "production",
-  entry: ["./client/index.tsx"],
+  entry: ["react-hot-loader/patch", "./client/index.tsx"],
   output: {
     path: path.resolve(__dirname, "../client"),
     filename: "main.js",
@@ -18,8 +18,13 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: "ts-loader",
-        exclude: /node_modules/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
+        },
       },
     ],
   },
