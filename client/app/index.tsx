@@ -1,12 +1,9 @@
-import { hot } from "react-hot-loader/root";
 import React from "react";
 import { GlobalStyle } from "./global-style";
 
-const _ = () => (
+export const App = () => (
   <>
     <GlobalStyle />
-    <h1>Hello world!!!!!!!</h1>
+    <h1>Hello world!</h1>
   </>
 );
-
-export const App = hot(_);

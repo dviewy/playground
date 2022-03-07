@@ -17,6 +17,5 @@ export const createDevServer = async (app: Express) => {
     })
   );
 
-  // @ts-ignore
   app.use(webpackHotMiddleware(compiler));
 };
