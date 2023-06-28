@@ -1,3 +1,5 @@
+import webpack from "webpack";
+
 require("dotenv").config();
 const path = require("path");
 const nodeExternals = require("webpack-node-externals");
@@ -25,4 +27,4 @@ module.exports = {
       },
     ],
   },
-};
+} as webpack.Configuration;
